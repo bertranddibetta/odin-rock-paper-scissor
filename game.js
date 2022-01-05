@@ -32,16 +32,16 @@ const computerSelection = computerPlay();
 
 const choices = ["Rock", "Paper", "Scissor"];
 
-function playRound(playerSelection, computerSelection) {
-    playerIndex = choices.indexOf(playerSelection);
-    computerIndex = choices.indexOf(computerSelection);
-    if (playerSelection === computerSelection){
-        return "This is a tie !"
+function playRound(playerChoice, computerChoice) {
+    playerIndex = choices.indexOf(playerChoice);
+    computerIndex = choices.indexOf(computerChoice);
+    if (playerSelection === computerChoice){
+        return "This is a tie ! You both played " + computerChoice;
     }
     else if ((((playerIndex - computerIndex) % 3 + 3 ) % 3) == 1 ){
-        return "You win ! " + playerSelection + " beats " + computerSelection;
+        return "You win ! " + playerChoice + " beats " + computerChoice;
     }
-    else return "You lose ! " + computerSelection + " beats " + playerSelection;
+    else return "You lose ! " + computerChoice + " beats " + playerChoice;
 }
 
 
