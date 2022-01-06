@@ -1,6 +1,6 @@
 # odin-rock-paper-scissor
 
-TODO - work in better commit names
+TODO - work on better commit names
  
  
  - 7/1/22 - basic game finished, used alert instead of console log
