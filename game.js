@@ -34,33 +34,33 @@ function fixPlayerInput(input){
 // 
 function game () {
     for (round; ; ++round) {
-        if (playerScore == 3 || compScore == 3){
+        if (playerScore == 3 || compScore == 3){ // change both number here to change needed rounds to win
             break
         }
         let playerInput = prompt("Choose between Rock, Paper or Scissor");
         let playerChoice = fixPlayerInput(playerInput);
         let compChoice = computerPlay();
-        let playerIndex = choices.indexOf(playerChoice);
-        let compIndex = choices.indexOf(compChoice);
-        if (playerChoice == "invalid"){
-            alert ("Oops, you typed " + playerInput + ". Try again with a correct value !");
+        let playerIndex = choices.indexOf(playerChoice); // transform input in number according to choices array
+        let compIndex = choices.indexOf(compChoice); // transform compChoice in number according to choices array
+        if (playerChoice == "invalid"){ // Handles incorrect input
+            alert ("Oops, you typed " + playerInput + ". Try again with a correct value !"); 
         }
         else if (playerChoice === compChoice){
             alert ("This is a tie !" + "\n" + "Computer played " + compChoice + "\n" +
             "The score is " + playerScore + " for you vs " + compScore + " for the computer.");
         }
-        else if ((((playerIndex - compIndex) % 3 + 3 ) % 3) == 1 ){
+        else if ((((playerIndex - compIndex) % 3 + 3 ) % 3) == 1 ){ // Starts by extracting the lenght then goes through modulo twice to remove negative lenght remainder
             ++playerScore;
             alert ("You win ! " + playerChoice + " beats " + compChoice + "\n" +
             "The score is " + playerScore + " for you vs " + compScore + " for the computer.");
         }
-        else { 
+        else { // if result is neither a tie nor a player win it has to be a computer win
             ++compScore;
             alert ("You lose ! " + compChoice + " beats " + playerChoice + "\n" +
             "The score is " + playerScore + " for you vs " + compScore + " for the computer.");
         }
     }
-    if (playerScore == 3) {
+    if (playerScore > compScore) {
         alert ("You win the game !\n" +
         "The final score is " + playerScore + " for you vs " + compScore + " for the computer.")
     }
