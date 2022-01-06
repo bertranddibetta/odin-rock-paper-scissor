@@ -1,4 +1,4 @@
-const choices = ["Rock", "Paper", "Scissor"];
+const choices = ["Rock", "Paper", "Scissor"]; // The array has to be ordered for the game() logic to work
 let playerScore = 0;
 let compScore = 0;
 let round = 1;
